@@ -1,0 +1,66 @@
+<div class="container-fluid">
+  <div *ngIf="!this.orderShow" class="member-order">
+    <legend>ORDER</legend>
+    <div class="form-group">
+      <label for="">Member Name</label>
+      <select class="form-control" [(ngModel)]="orderItem.member">
+        <option *ngFor="let member of members" [ngValue]="member">
+          {{ member.name }}
+        </option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="goToOrder()">Order Items</button>
+  </div>
+  
+  <div class="panel panel-default" style="margin-top:20px">
+    <div class="panel-body">
+      <div *ngIf="this.orderShow" class="order-item" >
+        <legend>ORDER ITEM - {{orderItem.member.name}}</legend>
+        <div class="row col-md-12">
+          
+        </div>
+        <div class="form-group">
+          <label for="">Item Name</label>
+          <select class="form-control" [(ngModel)]="orderItem.item">
+            <option *ngFor="let item of items" [ngValue]="item">
+              {{ item.name }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="">Quantity</label>
+          <input type="text" class="form-control" id="" placeholder="Quantity" [(ngModel)]="orderItem.quantity">
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="addItemCart()">To Item Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel panel-default" style="margin-top:20px">
+    <div class="panel-body">
+      
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let order of orderArr">
+            <td>{{ order.item.name }}</td>
+            <td>{{ order.item.price }}</td>
+            <td>{{ order.quantity }}</td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+  
+  <div class="pull-right">
+    <button type="submit" class="btn btn-warning" (click)="onSaveOrder()">SAVE</button>
+  </div>
+  
+</div>

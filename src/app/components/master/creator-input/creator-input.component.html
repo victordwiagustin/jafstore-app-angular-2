@@ -1,0 +1,13 @@
+<div class="container-fluid">
+	<legend>Input Creator</legend>
+	<div class="form-group">
+		<label for="">Creator Name</label>
+		<input type="text" class="form-control" id="" placeholder="Creator Name" [(ngModel)]="creator.name">
+  </div>
+  <div class="form-group">
+		<label for="">Creator Description</label>
+		<input type="text" class="form-control" id="" placeholder="Creator Description" [(ngModel)]="creator.description">
+	</div>
+	<button type="submit" class="btn btn-primary" (click)="onCreatorSave()">Submit</button>
+
+</div>

@@ -1,0 +1,21 @@
+<div class="container-fluid">
+	<legend>Register Member</legend>
+  <div class="form-group">
+		<label for="">Name</label>
+		<input type="text" class="form-control" id="" placeholder="Name" [(ngModel)]="member.name">
+  </div>
+  <div class="form-group">
+		<label for="">Email</label>
+		<input type="email" class="form-control" id="" placeholder="Email" [(ngModel)]="member.email">
+  </div>
+  <div class="form-group">
+		<label for="">Username</label>
+		<input type="text" class="form-control" id="" placeholder="Username" [(ngModel)]="member.username">
+  </div>
+  <div class="form-group">
+		<label for="">Password</label>
+		<input type="password" class="form-control" id="" placeholder="Password" [(ngModel)]="member.password">
+  </div>
+	<button type="submit" class="btn btn-primary" (click)="onMemberSave()">Submit</button>
+
+</div>

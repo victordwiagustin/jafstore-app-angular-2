@@ -1,0 +1,12 @@
+<!-- <div *ngIf="this.route == '/login'" class="login-page"> -->
+<div *ngIf="this.isLoginPage" class="login-page">
+  <app-alert></app-alert>
+  <app-login></app-login>
+</div>
+<div *ngIf="!this.isLoginPage" class="content-page">  
+  <app-header></app-header>
+  <app-alert></app-alert>
+  <router-outlet></router-outlet>
+</div>
+
+

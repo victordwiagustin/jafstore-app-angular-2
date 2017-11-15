@@ -1,0 +1,33 @@
+<div class="medium-8 medium-offset-2 columns">
+  <h2 class="subheader">Uahahahah</h2>
+  <!-- <ul>
+    <li *ngFor="let item of collection | paginate: { itemsPerPage: 10, currentPage: p }">{{ item }}</li>
+  </ul> -->
+  <input type="text" [(ngModel)]="pageItems" />
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Category</th>
+        <th>Creator</th>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Price</th>
+        <!-- <th>Action</th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items | paginate: {itemsPerPage: 10 , currentPage: p}">
+        <td>{{ item.id }}</td>
+        <td>{{ item.category.name }}</td>
+        <td>{{ item.creator.name }}</td>
+        <td>{{ item.code }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.price }}</td>
+        <!-- <td><button type="button" class="btn btn-warning" (click)="onDeleteItem(item)">Delete</button></td> -->
+      </tr>
+    </tbody>
+  </table>
+  
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
